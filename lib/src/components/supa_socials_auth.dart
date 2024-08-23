@@ -317,7 +317,8 @@ class _SupaSocialsAuthState extends State<SupaSocialsAuth> {
               final iosClientId = googleAuthConfig?.iosClientId;
               final shouldPerformNativeGoogleSignIn =
                   (webClientId != null && !kIsWeb && Platform.isAndroid) ||
-                      (iosClientId != null && !kIsWeb && Platform.isIOS);
+                      (iosClientId != null && !kIsWeb && Platform.isIOS) ||
+                      (iosClientId != null && !kIsWeb && Platform.isMacOS);
               if (shouldPerformNativeGoogleSignIn) {
                 await _nativeGoogleSignIn(
                   webClientId: webClientId,
